@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap');
+body, p, h1, ul, li, blockquote{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    font-family: sans-serif;
+}
+li{
+    list-style: none;
+}
+
+a{
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+body{
+    background-color: #1d1d1d;
+    height: 100vh;
+    color: white;
+    display: grid;
+    grid-template-columns: 70px 2fr 2fr;
+    grid-template-areas: 
+        "nav content content"
+        "nav content content"
+        "nav content content"
+    ;
+    gap: 30px;
+    
+}
+
+/* NAVBAR */
+
+
+.nav{
+    grid-area: nav;
+    background: #181818;
+    display: grid;
+    grid-template-rows: 60px 2fr 60px;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+}
+.pages a{
+    display: block;
+    height: 60px;
+}
+.pages img + img{
+    margin-bottom: 15px;
+}
+
+.logo-pequeno{
+    width: 24px;
+    margin-left: 20%;
+}
+.home li{
+    content: url("../img/icons/home.svg");
+}
+.home:hover li{
+    content: "Home";
+    color: #08fdd8;
+    transition: all .3s;
+}
+.home:hover li::after{
+    content: "home";
+    transition: all .3s;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.Skill li{
+    content: url("../img/icons/settings.svg");
+}
+.Skill:hover li{
+    content: "Skill";
+    color: #08fdd8;
+    transition: all .3s;
+}
+.Skill:hover li::after{
+    content: "Skill";
+    transition: all .3s;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.sobre li{
+    content: url("../img/icons/user.svg");
+}
+.sobre:hover li{
+    content: "Sobre";
+    color: #08fdd8;
+    transition: all .3s;
+}
+.sobre:hover li::after{
+    content: "Sobre";
+    transition: all .3s;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.contato li{
+    content: url("../img/icons/email.svg");
+}
+.contato:hover li{
+    content: "contato";
+    color: #08fdd8;
+    transition: all .3s;
+}
+.contato:hover li::after{
+    content: "contato";
+    transition: all .3s;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+
+
+
+/* MAIN!! */
+
+main{
+    grid-area: content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* flip */
+.flip-box {
+   margin-left: 50px;
+   margin-right: 50px;
+    background-color: transparent;
+    width: 350px;
+    height: 200px;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: #312a20;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  @media (max-width: 700px){
+    body{
+        grid-template-areas: 
+        "nav nav nav"
+        "content content content"
+        "logo-grande logo-grande logo-grande"
+    ;
+    gap: 0;
+    }
+    .nav{
+        display: grid;
+        grid-template-columns: 60px auto;
+        height: 60px;
+    }
+    .logo{
+        margin-right: 20%;
+    }
+    .pages{
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 80%;
+        height: 100%;
+    }
+    .link{
+        display: none;
+    }
+    .flip-box{
+        margin-left: 10%;
+        margin-top: 50px;
+    }
+    .flip-box-front img{
+        width: 300px !important;
+    }
+    .flip-box-inner{
+        width: 300px;
+    }
+}
+
+
