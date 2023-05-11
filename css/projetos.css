@@ -201,6 +201,7 @@ main{
         align-items: flex-end;
         width: 80%;
         height: 100%;
+        flex-direction: row !important;
     }
     .link{
         display: none;
